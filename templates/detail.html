@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ entry.title }}</h2>
+<p><small>{{ entry.date }}</small></p>
+<div class="entry-content">
+    <p>{{ entry.content }}</p>
+</div>
+
+<hr>
+<a href="/edit{{ entry.id }}">Редактировать</a> | 
+<form action="/delete/{{ entry.id }}" method="POST" style="display:inline;">
+    <button type="submit">Удалить</button>
+</form> | 
+<a href="/">На главную</a>
+{% endblock %}
